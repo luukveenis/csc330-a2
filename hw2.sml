@@ -6,6 +6,19 @@ fun same_string(s1 : string, s2 : string) =
 
 (* put your solutions for Part 1 here *)
 
+fun all_except_option(str: string, sl: string list) =
+  let
+    fun search(head, tail) =
+      case tail of
+        [] => (false, [])
+      | t :: tail' =>
+          if same_string(t,str) then (true, head @ tail')
+          else search(head @ [t], tail')
+  in
+    case search([], sl) of
+      (true, ls) => SOME ls
+    | _ => NONE
+  end
 
 (************************************************************************)
 (* Game  *)

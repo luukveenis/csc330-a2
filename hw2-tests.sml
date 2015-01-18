@@ -6,14 +6,14 @@
 
 (* Place your tests at the end of the file *)
 
-use "hw2-sol.sml";
+use "hw2.sml";
 
-val test1_1=all_except_option("3",["4","9","10"]) = NONE
-val test1_2=all_except_option("3",["4","9","3","10"]) = SOME ["4","9","10"]
-val test1_3=all_except_option("3",[]) = NONE
-val test1_4=all_except_option("3",["3","4","9","10"])  = SOME ["4","9","10"]
-val test1_5=all_except_option("3",["4","9","10","3"]) = SOME ["4","9","10"]
-val test1_6=all_except_option("3",["3"]) = SOME []
+val test1_1=all_except_option("3",["4","9","10"]) = NONE;
+val test1_2=all_except_option("3",["4","9","3","10"]) = SOME ["4","9","10"];
+val test1_3=all_except_option("3",[]) = NONE;
+val test1_4=all_except_option("3",["3","4","9","10"])  = SOME ["4","9","10"];
+val test1_5=all_except_option("3",["4","9","10","3"]) = SOME ["4","9","10"];
+val test1_6=all_except_option("3",["3"]) = SOME [];
 
 val test2_1=get_substitutions1([["Fred","Fredrick"],["Elizabeth","Betty"],["Freddie","Fred","F"]],
                                "Fred")
