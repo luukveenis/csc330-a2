@@ -8,16 +8,15 @@ fun same_string(s1 : string, s2 : string) =
 
 fun all_except_option(str: string, sl: string list) =
   let
-    fun search(head, tail) =
-      case tail of
-        [] => (false, [])
-      | t :: tail' =>
-          if same_string(t,str) then (true, head @ tail')
-          else search(head @ [t], tail')
+    fun includes([], str) = false
+      | includes(s::lst, str) = if same_string(s,str) then true
+                                else includes(lst, str)
+    fun delete ([], str) = []
+      | delete (s::lst, str) = if same_string(s,str) then delete(lst, str)
+                               else s::delete(lst,str)
   in
-    case search([], sl) of
-      (true, ls) => SOME ls
-    | _ => NONE
+    if includes(sl,str) then SOME (delete(sl,str))
+    else NONE
   end
 
 (************************************************************************)
