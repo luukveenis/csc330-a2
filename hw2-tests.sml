@@ -17,16 +17,16 @@ val test1_6=all_except_option("3",["3"]) = SOME [];
 
 val test2_1=get_substitutions1([["Fred","Fredrick"],["Elizabeth","Betty"],["Freddie","Fred","F"]],
                                "Fred")
-            = ["Fredrick","Freddie","F"]
+            = ["Fredrick","Freddie","F"];
 val test2_2=get_substitutions1([["Fred","Fredrick"],["Jeff","Jeffrey"],["Geoff","Jeff","Jeffrey"]],
                                "Jeff")
-            = ["Jeffrey","Geoff","Jeffrey"]
+            = ["Jeffrey","Geoff","Jeffrey"];
 val test2_3=get_substitutions1([["Neo","New"],["Panzer","Tank","Sherman"],["Tank", "Container"],["Epoch","Era"]],
                                "Tank")
-            = ["Panzer","Sherman","Container"]
+            = ["Panzer","Sherman","Container"];
 val test2_4=get_substitutions1([["Neo","New", "Nuovo"],["Panzer","Tank","Sherman"],["Tank", "Container"],["Epoch","Era"]],
                                "Neo")
-            = ["New","Nuovo"]
+            = ["New","Nuovo"];
 
 val test3_1=get_substitutions2([["Fred","Fredrick"],["Elizabeth","Betty"],["Freddie","Fred","F"]],
                                "Fred")

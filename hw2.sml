@@ -19,6 +19,13 @@ fun all_except_option(str: string, sl: string list) =
     else NONE
   end
 
+fun get_substitutions1(lst: string list list, str: string) =
+  case lst of
+    [] => []
+  | l::lst' => case all_except_option(str, l) of
+                 NONE => get_substitutions1(lst', str)
+               | SOME x => x @ get_substitutions1(lst', str)
+
 (************************************************************************)
 (* Game  *)
 
