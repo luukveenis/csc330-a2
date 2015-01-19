@@ -26,6 +26,13 @@ fun get_substitutions1(lst: string list list, str: string) =
                  NONE => get_substitutions1(lst', str)
                | SOME x => x @ get_substitutions1(lst', str)
 
+(* fun get_substitutions2(lst: string list list, str: string) = *)
+(*   let *)
+(*     (* add local helper with tail recursion *) *)
+(*   in *)
+(*     (* add code *) *)
+(*   end *)
+
 (************************************************************************)
 (* Game  *)
 
