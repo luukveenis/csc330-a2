@@ -6,24 +6,19 @@ fun same_string(s1 : string, s2 : string) =
 
 (* put your solutions for Part 1 here *)
 
-fun all_except_option(str: string, sl: string list) =
-  let
-    fun includes([], str) = false
-      | includes(s::lst, str) = if same_string(s,str) then true
-                                else includes(lst, str)
-    fun delete ([], str) = []
-      | delete (s::lst, str) = if same_string(s,str) then delete(lst, str)
-                               else s::delete(lst,str)
-  in
-    if includes(sl,str) then SOME (delete(sl,str))
-    else NONE
-  end
+fun all_except_option(str: string, lst: string list) =
+  case lst of
+    []     => NONE
+  | s::lst' => if same_string(s,str) then SOME lst'
+               else case all_except_option(str, lst') of
+                     NONE   => NONE
+                   | SOME x => SOME (s::x)
 
 fun get_substitutions1(lst: string list list, str: string) =
   case lst of
     [] => []
   | l::lst' => case all_except_option(str, l) of
-                 NONE => get_substitutions1(lst', str)
+                 NONE   => get_substitutions1(lst', str)
                | SOME x => x @ get_substitutions1(lst', str)
 
 (* fun get_substitutions2(lst: string list list, str: string) = *)
