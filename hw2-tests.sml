@@ -100,11 +100,11 @@ val test7_3 = remove_card(cards3, (Clubs, Num 9), notFound) = [(Clubs,Ace),(Diam
 val test7_4 = remove_card(cards5, (Diamonds, Ace), notFound) = [(Diamonds, Num 10), (Diamonds, Queen), (Diamonds, Jack), (Diamonds,King)];
 val test7_5 = remove_card(cards2, (Clubs, Ace), notFound) = [] handle notFound => true;
 
-val test8_1 = all_same_color(cards1) = false
-val test8_2 = all_same_color(cards2) = true
-val test8_3 = all_same_color(cards3) = false
-val test8_4 = all_same_color(cards5) = true
-val test8_5 = all_same_color(cards5) = true
+val test8_1 = all_same_color(cards1) = false;
+val test8_2 = all_same_color(cards2) = true;
+val test8_3 = all_same_color(cards3) = false;
+val test8_4 = all_same_color(cards5) = true;
+val test8_5 = all_same_color(cards5) = true;
 
 val test9_1 = sum_cards(cards1) = 29
 val test9_2 = sum_cards(cards2) = 0
