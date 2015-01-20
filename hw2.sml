@@ -74,10 +74,9 @@ fun remove_card(cs: card list, c: card, e: exn) =
 
 fun all_same_color(cs: card list) =
   case cs of
-    []         => true
-  | x::[]      => true
-  | x::y::rest => if card_color(x)=card_color(y) then all_same_color(y::rest)
+    x::y::rest => if card_color(x)=card_color(y) then all_same_color(y::rest)
                   else false
+  | _  => true (* empty or one element lists are both true *)
 
 fun sum_cards(cs: card list) =
   let
