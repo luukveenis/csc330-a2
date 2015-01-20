@@ -106,11 +106,11 @@ val test8_3 = all_same_color(cards3) = false;
 val test8_4 = all_same_color(cards5) = true;
 val test8_5 = all_same_color(cards5) = true;
 
-val test9_1 = sum_cards(cards1) = 29
-val test9_2 = sum_cards(cards2) = 0
-val test9_3 = sum_cards(cards3) = 35
-val test9_4 = sum_cards(cards4) = 28
-val test9_5 = sum_cards(cards5) = 51
+val test9_1 = sum_cards(cards1) = 29;
+val test9_2 = sum_cards(cards2) = 0;
+val test9_3 = sum_cards(cards3) = 35;
+val test9_4 = sum_cards(cards4) = 28;
+val test9_5 = sum_cards(cards5) = 51;
 
 val test10_1 = score(cards1, 1) = 28 * 2
 val test10_2 = score(cards2, 28) = 14 (* empty list is conssidered same color *)
