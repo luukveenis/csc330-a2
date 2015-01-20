@@ -57,10 +57,9 @@ exception IllegalMove
 
 fun card_color(c: card) =
   case c of
-    (Clubs, _)    => Black
-  | (Spades, _)   => Black
-  | (Diamonds, _) => Red
-  | (Hearts, _)   => Red
+    (Clubs, _)  => Black
+  | (Spades, _) => Black
+  | _           => Red
 
 fun card_value(c: card) =
   case c of
