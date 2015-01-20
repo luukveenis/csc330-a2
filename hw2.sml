@@ -28,6 +28,16 @@ fun get_substitutions1(lst: string list list, str: string) =
 (*     (* add code *) *)
 (*   end *)
 
+fun similar_names(lst: string list list, {first=f,middle=m,last=l}) =
+  let
+    fun build_names(subs: string list) =
+      case subs of
+        [] => []
+      | name::subs' => {first=name,middle=m,last=l}::build_names(subs')
+  in
+    {first=f, middle=m, last=l}::build_names(get_substitutions1(lst,f))
+  end
+
 (************************************************************************)
 (* Game  *)
 
