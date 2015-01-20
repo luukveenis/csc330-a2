@@ -88,3 +88,14 @@ fun sum_cards(cs: card list) =
   in
     aux(cs, 0)
   end
+
+fun score(cs: card list, goal: int) =
+  let
+    fun prelim_score(sum, goal) =
+      if sum > goal then 2 * (sum - goal)
+      else goal - sum
+  in
+    case all_same_color(cs) of
+      false => prelim_score(sum_cards(cs), goal)
+    | true  => prelim_score(sum_cards(cs), goal) div 2
+  end

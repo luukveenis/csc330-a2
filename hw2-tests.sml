@@ -112,12 +112,12 @@ val test9_3 = sum_cards(cards3) = 35;
 val test9_4 = sum_cards(cards4) = 28;
 val test9_5 = sum_cards(cards5) = 51;
 
-val test10_1 = score(cards1, 1) = 28 * 2
-val test10_2 = score(cards2, 28) = 14 (* empty list is conssidered same color *)
-val test10_3 = score(cards3, 35) = 0
-val test10_4 = score(cards4, 28) = 0
-val test10_5 = score([(Spades, Num 2)], 28) = 13
-val test10_6 = score([(Diamonds, Ace), (Diamonds, Num 10)],20) = 1
+val test10_1 = score(cards1, 1) = 28 * 2;
+val test10_2 = score(cards2, 28) = 14; (* empty list is conssidered same color *)
+val test10_3 = score(cards3, 35) = 0;
+val test10_4 = score(cards4, 28) = 0;
+val test10_5 = score([(Spades, Num 2)], 28) = 13;
+val test10_6 = score([(Diamonds, Ace), (Diamonds, Num 10)],20) = 1;
 
 val test11_1 = officiate(cards3, [], 10) = 5
 val test11_2 = officiate(cards3, [Draw], 10) = 1
