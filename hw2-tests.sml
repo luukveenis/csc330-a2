@@ -1,9 +1,12 @@
 (* Tests for assignment 2 *)
 
 (*
- * Version 1.2
+ * Version 1.3
 *
 * Changelog:
+* 2015-01-20  dmg  <dmg@uvic.ca>
+*       * fixed test11_6, test11_8, test11_12 (game should stop when the sum
+*          of the cards---not the score--is above the goal)
 *
 * 2015-01-19  dmg  <dmg@uvic.ca>
 *	* fixed test11_10
@@ -124,14 +127,13 @@ val test11_2 = officiate(cards3, [Draw], 10) = 1
 val test11_3 = officiate(cards3, [Draw], 5) = 6
 val test11_4 = officiate(cards5, [Draw, Draw], 0) = 11
 val test11_5 = officiate(cards3, [Draw, Draw], 15) = 12
-val test11_6 = officiate(cards3, [Draw, Draw, Draw], 15) = 22
+val test11_6 = officiate(cards3, [Draw, Draw, Draw], 15) = 12
 val test11_7 = officiate(cards3, [Draw, Draw, Draw, Draw], 35) = 0
-val test11_8 = officiate(cards3, [Draw, Draw, Draw, Discard (Spades, Num 5)], 15) = 22
+val test11_8 = officiate(cards3, [Draw, Draw, Draw, Discard (Spades, Num 5)], 15) = 12
 val test11_9 = officiate(cards5, [Draw, Draw, Draw, Discard (Spades, Num 2)], 45) = 10 handle IllegalMove => true
 val test11_10 = officiate(cards2, [Draw], 10) = 5
 val test11_11 = officiate(cards2, [Discard (Spades, Ace)], 10) = 5 handle IllegalMove => true
-val test11_12 = officiate(cards3, [Draw, Discard (Spades, Num 7)], 10) = 6  handle IllegalMove => true
-
+val test11_12 = officiate(cards3, [Draw, Discard (Spades, Num 7)], 10) = 1
 
 (*********************************************************************** *)
 (* Your tests go after this *)
