@@ -35,12 +35,12 @@ fun get_substitutions2(lst: string list list, str: string) =
 
 fun similar_names(lst: string list list, {first=f,middle=m,last=l}) =
   let
-    fun build_names(subs: string list) =
+    fun build_names(subs: string list, {middle=m,last=l}) =
       case subs of
         [] => []
-      | name::subs' => {first=name,middle=m,last=l}::build_names(subs')
+      | n::subs' => {first=n,middle=m,last=l}::build_names(subs',{middle=m,last=l})
   in
-    {first=f, middle=m, last=l}::build_names(get_substitutions1(lst,f))
+    {first=f,middle=m,last=l}::build_names(get_substitutions1(lst,f),{middle=m,last=l})
   end
 
 (************************************************************************)
