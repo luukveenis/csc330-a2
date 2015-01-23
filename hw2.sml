@@ -109,12 +109,13 @@ fun officiate(cl: card list, ml: move list, goal: int) =
     fun process(cl: card list, hc: card list, ml: move list, goal: int) =
       case ml of (* check for remaining moves *)
         []     => score(hc, goal)
-      | m::ml' => case m of (* check for type of move *)
-                    Discard c => process(cl, remove_card(hc, c, IllegalMove), ml', goal)
-                  | Draw      => case cl of (* check for empty draw pile *)
-                                   [] => score(hc, goal)
-                                 | y::cl' => if sum_cards(y::hc) > goal then score(y::hc, goal)
-                                             else process(cl', y::hc, ml', goal)
+      | m::ml' => case m of (* check  type of move *)
+            Discard c => process(cl, remove_card(hc, c, IllegalMove), ml', goal)
+          | Draw => case cl of (* check for empty draw pile *)
+                      [] => score(hc, goal)
+                    | c::cl' => if sum_cards(c::hc) > goal
+                                then score(c::hc, goal)
+                                else process(cl', c::hc, ml', goal)
   in
     process(cl, [], ml, goal)
   end
