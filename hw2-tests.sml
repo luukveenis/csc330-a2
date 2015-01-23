@@ -138,3 +138,32 @@ val test11_12 = officiate(cards3, [Draw, Discard (Spades, Num 7)], 10) = 1
 
 (*********************************************************************** *)
 (* Your tests go after this *)
+
+val JackOfDiamonds = (Diamonds, Jack)
+val TwoOfSpades = (Spades, Num 2)
+val test_cards = [(Spades, Num 2), (Clubs, Queen), (Hearts, Queen)]
+val test_cards2 = [(Spades, Num 2), (Clubs, Queen), (Spades, Jack)]
+
+val test1_0=all_except_option("7",["6","7"]) = SOME ["6"]
+val test2_0=get_substitutions1([["Charles","Charlie"],["Richard","Dick"]],
+                               "Charles")
+            = ["Charlie"]
+val test3_0=get_substitutions2([["Charles","Charlie"],["Richard","Dick"]],
+                               "Charles")
+            = ["Charlie"]
+val test4_0=similar_names([
+                             ["Wade", "Deadpool"],
+                             ["Hank", "Antman"],
+                             ["Deathstroke", "Slade", "Terminator"]
+                         ], {first="Slade", middle = "Joseph", last="Wilson"}) =
+            [{first="Slade",last="Wilson",middle="Joseph"},
+             {first="Deathstroke",last="Wilson",middle="Joseph"},
+             {first="Terminator",last="Wilson",middle="Joseph"}]
+val test5_0= card_color(JackOfDiamonds) = Red
+val test6_0= card_value(TwoOfSpades) = 2
+val test7_0 = remove_card(test_cards, (Hearts, Queen), notFound) = [(Spades,Num 2),(Clubs,Queen)]
+val test8_0 = all_same_color(test_cards) = false
+val test8_01 = all_same_color(test_cards2) = true
+val test9_0 = sum_cards(test_cards) = 22
+val test10_0 = score(test_cards, 18) = 4 * 2
+val test11_0 = officiate(test_cards, [Draw, Draw], 4) = 8
