@@ -40,18 +40,18 @@ val test2_4=get_substitutions1([["Neo","New", "Nuovo"],["Panzer","Tank","Sherman
                                "Neo")
             = ["New","Nuovo"];
 
-(* val test3_1=get_substitutions2([["Fred","Fredrick"],["Elizabeth","Betty"],["Freddie","Fred","F"]], *)
-(*                                "Fred") *)
-(*             = ["Fredrick","Freddie","F"] *)
-(* val test3_2=get_substitutions2([["Fred","Fredrick"],["Jeff","Jeffrey"],["Geoff","Jeff","Jeffrey"]], *)
-(*                                "Jeff") *)
-(*             = ["Jeffrey","Geoff","Jeffrey"] *)
-(* val test3_3=get_substitutions2([["Neo","New"],["Panzer","Tank","Sherman"],["Tank", "Container"],["Epoch","Era"]], *)
-(*                                "Tank") *)
-(*             = ["Panzer","Sherman","Container"] *)
-(* val test3_4=get_substitutions1([["Neo","New", "Nuovo"],["Panzer","Tank","Sherman"],["Tank", "Container"],["Epoch","Era"]], *)
-(*                                "Neo") *)
-(*             = ["New","Nuovo"] *)
+val test3_1=get_substitutions2([["Fred","Fredrick"],["Elizabeth","Betty"],["Freddie","Fred","F"]],
+                               "Fred")
+            = ["Fredrick","Freddie","F"]
+val test3_2=get_substitutions2([["Fred","Fredrick"],["Jeff","Jeffrey"],["Geoff","Jeff","Jeffrey"]],
+                               "Jeff")
+            = ["Jeffrey","Geoff","Jeffrey"]
+val test3_3=get_substitutions2([["Neo","New"],["Panzer","Tank","Sherman"],["Tank", "Container"],["Epoch","Era"]],
+                               "Tank")
+            = ["Panzer","Sherman","Container"]
+val test3_4=get_substitutions1([["Neo","New", "Nuovo"],["Panzer","Tank","Sherman"],["Tank", "Container"],["Epoch","Era"]],
+                               "Neo")
+            = ["New","Nuovo"]
 
 val test4_1=similar_names([
                              ["Thomas", "Neo"],

@@ -21,12 +21,17 @@ fun get_substitutions1(lst: string list list, str: string) =
                  NONE   => get_substitutions1(lst', str)
                | SOME x => x @ get_substitutions1(lst', str)
 
-(* fun get_substitutions2(lst: string list list, str: string) = *)
-(*   let *)
-(*     (* add local helper with tail recursion *) *)
-(*   in *)
-(*     (* add code *) *)
-(*   end *)
+fun get_substitutions2(lst: string list list, str: string) =
+  let
+    fun aux(lst, str, acc) =
+      case lst of
+        [] => acc
+      | l::lst' => case all_except_option(str, l) of
+                     NONE   => aux(lst', str, acc)
+                   | SOME x => aux(lst', str, acc @ x)
+  in
+    aux(lst, str, [])
+  end
 
 fun similar_names(lst: string list list, {first=f,middle=m,last=l}) =
   let
